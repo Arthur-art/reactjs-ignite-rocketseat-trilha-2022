@@ -6,3 +6,15 @@
 
 ### Trabalhando com css module ja incluso em aplicações criadas com vite
 - https://github.com/gajus/react-css-modules
+
+### Estilizando o projeto globalmente
+- Zerando css padrão do browser:
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+```
+- Trabalhando com fonts do google
+  - https://fonts.google.com/
