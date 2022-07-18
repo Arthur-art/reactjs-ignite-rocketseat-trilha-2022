@@ -1,12 +1,11 @@
-import { Button } from "./components/Button"
-import { Posts } from "./components/Posts"
+import { Header } from "./components/Header/Header"
+import "./global.css"
 
 export function App() {
 
   return (
     <>
-    <Posts post="Hello World" />
-    <Button title="Click" />
+    <Header />
     </>
   )
 }
