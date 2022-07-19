@@ -18,3 +18,6 @@
 ```
 - Trabalhando com fonts do google
   - https://fonts.google.com/
+
+### Trabalhando com lib phosphoricons para lidar com icons
+- https://phosphoricons.com/
