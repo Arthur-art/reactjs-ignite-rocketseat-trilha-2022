@@ -12,6 +12,10 @@
     --green-500: #00875f;
 }
 
+:focus{
+    outline: transparent;
+}
+
 *{
     margin: 0;
     padding: 0;
