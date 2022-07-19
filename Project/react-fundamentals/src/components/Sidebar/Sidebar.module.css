@@ -1,0 +1,10 @@
+.profile{
+    background: var(--gray-800);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile img{
+    width: 5rem;
+    height: 5rem;
+}   

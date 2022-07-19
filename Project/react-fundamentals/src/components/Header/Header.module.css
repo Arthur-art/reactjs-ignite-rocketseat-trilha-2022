@@ -2,5 +2,12 @@
     background: var(--gray-800);
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
     padding: 1.25rem 0;
+    align-items: center;
+}
+
+.header img{
+    height: 2rem;
+    margin-right: 0.5rem;
 }
