@@ -1,4 +1,5 @@
 import { imgGithubProfile } from "../../assets/url-photos";
+import { Comment } from "../Comment/Comment";
 import styles from "./Posts.module.css"
 
 interface PostProps{
@@ -40,6 +41,12 @@ export const Posts = ({post}:PostProps) =>{
                 />
                 <button type="submit">Publicar</button>
             </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         </article>
     )
 }
