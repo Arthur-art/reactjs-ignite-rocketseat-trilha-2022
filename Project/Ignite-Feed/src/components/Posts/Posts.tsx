@@ -1,4 +1,5 @@
-import { imgGithubProfile } from "../../assets/url-photos";
+import {format, formatDistanceToNow} from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { Avatar } from "../Avatar/Avatar";
 import { Comment } from "../Comment/Comment";
 import styles from "./Posts.module.css"
@@ -21,6 +22,15 @@ interface PostProps{
 
 export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
+    const publishedAtDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+        locale: ptBR
+    })
+
+    const publishedAtDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true
+    })
+
     return (
         <article className={styles.post}>
             <header>
@@ -34,7 +44,7 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
                     </div>
                 </div>
 
-                <time title="11 de Maio às 08:13h" dateTime={String(publishedAt)}>Publicado há 1h</time>
+                <time title={publishedAtDateFormatted} dateTime={publishedAt.toISOString()}>{publishedAtDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>

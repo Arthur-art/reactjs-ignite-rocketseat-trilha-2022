@@ -21,3 +21,6 @@
 
 ### Trabalhando com lib phosphoricons para lidar com icons
 - https://phosphoricons.com/
+
+### Trabalhando com date-fns
+- https://date-fns.org/
