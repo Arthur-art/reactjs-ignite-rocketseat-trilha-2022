@@ -14,7 +14,7 @@ export function App() {
         <Sidebar />
         <main>
           {posts.map((postsValue)=>{
-            return <Posts author={postsValue.author} publishedAt={postsValue.publishedAt} content={postsValue.content} />
+            return <Posts key={postsValue.id} author={postsValue.author} publishedAt={postsValue.publishedAt} content={postsValue.content} />
           })}
         </main>
       </div>
