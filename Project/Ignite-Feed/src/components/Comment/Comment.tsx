@@ -1,5 +1,6 @@
 import { ThumbsUp, Trash } from "phosphor-react"
 import { imgGithubProfile } from "../../assets/url-photos"
+import { Avatar } from "../Avatar/Avatar"
 import styles from "./Comment.module.css"
 
 
@@ -7,7 +8,7 @@ export const Comment = () =>{
 
     return (
         <div className={styles.comment}>
-            <img src={imgGithubProfile} alt="Github Logo" />
+            <Avatar profile={imgGithubProfile} />
 
 
             <div className={styles.commentBox}>

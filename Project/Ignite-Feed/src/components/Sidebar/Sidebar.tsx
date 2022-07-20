@@ -1,5 +1,6 @@
 import { PencilLine } from "phosphor-react"
 import { imgDeveloper, imgGithubProfile } from "../../assets/url-photos"
+import { Avatar } from "../Avatar/Avatar"
 import styles from "./Sidebar.module.css"
 
 export const Sidebar = () =>{
@@ -10,7 +11,7 @@ export const Sidebar = () =>{
 
             <div className={styles.profile}>
 
-                <img src={imgGithubProfile} alt="Github Profile" />
+               <Avatar hasBorder profile={imgGithubProfile} />
 
                 <strong>Arthur Teixeira</strong>
                 <span>Web Developer</span>

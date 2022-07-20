@@ -1,4 +1,5 @@
 import { imgGithubProfile } from "../../assets/url-photos";
+import { Avatar } from "../Avatar/Avatar";
 import { Comment } from "../Comment/Comment";
 import styles from "./Posts.module.css"
 
@@ -12,7 +13,9 @@ export const Posts = ({post}:PostProps) =>{
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img src={imgGithubProfile} alt="Github Profile" />
+
+                    <Avatar hasBorder profile={imgGithubProfile} />
+                    
                     <div className={styles.authorInfo}>
                         <strong>Arthur Teixeira</strong>
                         <span>Web Developer</span>
