@@ -3,31 +3,49 @@ import { Avatar } from "../Avatar/Avatar";
 import { Comment } from "../Comment/Comment";
 import styles from "./Posts.module.css"
 
-interface PostProps{
-    post:string;
+type author = {
+    avatar_url: string,
+    name: string;
+    role: string;
 }
 
-export const Posts = ({post}:PostProps) =>{
+type content = {
+    type: string;
+    content: string;
+}
+interface PostProps{
+    author: author;
+    publishedAt: Date;
+    content: content[];
+}
+
+export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
 
-                    <Avatar hasBorder profile={imgGithubProfile} />
+                    <Avatar hasBorder profile={author.avatar_url} />
                     
                     <div className={styles.authorInfo}>
-                        <strong>Arthur Teixeira</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">Publicado há 1h</time>
+                <time title="11 de Maio às 08:13h" dateTime={String(publishedAt)}>Publicado há 1h</time>
             </header>
 
             <div className={styles.content}>
-                <p>Texto</p>
-                <p><a href="">arthur.web/github</a></p>
+               {content.map((contentValue)=>{
+                return (
+                    <>
+                    {contentValue.type === "paragraph" && <p>{contentValue.content}</p>}
+                    {contentValue.type === "link" && <p><a href={contentValue.content}>{contentValue.content}</a></p>}
+                    </>
+                )
+               })}
                 <p>
                     <a href="">#rocketseat</a>{' '}
                     <a href="">#github</a>{' '}
@@ -46,8 +64,6 @@ export const Posts = ({post}:PostProps) =>{
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
-                <Comment />
                 <Comment />
             </div>
         </article>

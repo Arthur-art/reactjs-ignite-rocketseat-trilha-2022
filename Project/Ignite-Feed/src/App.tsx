@@ -3,6 +3,7 @@ import styles from "./App.module.css"
 import "./global.css"
 import { Posts } from "./components/Posts/Posts"
 import { Sidebar } from "./components/Sidebar/Sidebar"
+import { posts } from "./api"
 
 export function App() {
 
@@ -12,8 +13,9 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Posts post="Hello World" />
-          <Posts post="ReactJS" />
+          {posts.map((postsValue)=>{
+            return <Posts author={postsValue.author} publishedAt={postsValue.publishedAt} content={postsValue.content} />
+          })}
         </main>
       </div>
     </>
