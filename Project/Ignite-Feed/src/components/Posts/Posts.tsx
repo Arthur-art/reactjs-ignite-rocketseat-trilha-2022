@@ -23,7 +23,11 @@ interface PostProps{
 
 export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
-    const [comments, setComments] = useState("")
+    const [newComments, setNewComments] = useState("")
+
+    const [comments, setComments] = useState([
+        "Post muito bacana, hein ?"
+    ])
 
     const publishedAtDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
@@ -36,7 +40,8 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
     function handleCreateNewComment(event:FormEvent){
         event.preventDefault()
-        console.log("Submit form")
+        setComments([...comments, newComments])
+        setNewComments("")
     }
 
     return (
@@ -52,7 +57,9 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
                     </div>
                 </div>
 
-                <time title={publishedAtDateFormatted} dateTime={publishedAt.toISOString()}>{publishedAtDateRelativeToNow}</time>
+                <time
+                 title={publishedAtDateFormatted}
+                 dateTime={publishedAt.toISOString()}>{publishedAtDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>
@@ -76,13 +83,16 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
                 <textarea
                     placeholder="Deixe um comentário!"
-
+                    value={newComments}
+                    onChange={(event) => setNewComments(event.target.value)}
                 />
                 <button type="submit">Publicar</button>
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
+                {comments.map((commentsValue)=>{
+                    return <Comment content={commentsValue} />
+                })}
             </div>
         </article>
     )

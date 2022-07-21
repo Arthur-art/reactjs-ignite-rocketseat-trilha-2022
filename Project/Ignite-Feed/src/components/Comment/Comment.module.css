@@ -23,6 +23,11 @@
 .authorAndTime{
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+}
+
+.authorAndTime time{
+    font-size: 0.8rem;
 }
 
 .commentContent header button{

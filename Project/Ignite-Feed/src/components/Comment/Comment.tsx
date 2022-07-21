@@ -3,8 +3,11 @@ import { imgGithubProfile } from "../../assets/url-photos"
 import { Avatar } from "../Avatar/Avatar"
 import styles from "./Comment.module.css"
 
+interface CommentsProps{
+    content:string;
+}
 
-export const Comment = () =>{
+export const Comment = ({content}:CommentsProps) =>{
 
     return (
         <div className={styles.comment}>
@@ -24,7 +27,7 @@ export const Comment = () =>{
                         </button>
                     </header>
 
-                    <p>Comentario</p>
+                    <p>{content}</p>
                 </div>
 
                 <footer>
