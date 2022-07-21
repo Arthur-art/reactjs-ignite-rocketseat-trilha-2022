@@ -1,7 +1,7 @@
 .comment{
     margin-top: 1.5rem;
-    display: flex;
     gap: 1rem;
+    display: flex;
 }
 
 .commentBox{
@@ -23,11 +23,11 @@
 .authorAndTime{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .authorAndTime time{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
 }
 
 .commentContent header button{

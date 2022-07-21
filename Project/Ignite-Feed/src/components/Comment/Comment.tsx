@@ -5,9 +5,10 @@ import styles from "./Comment.module.css"
 
 interface CommentsProps{
     content:string;
-}
+    deleteComments: (args:string) => void;
+}   
 
-export const Comment = ({content}:CommentsProps) =>{
+export const Comment = ({content, deleteComments}:CommentsProps) =>{
 
     return (
         <div className={styles.comment}>
@@ -19,14 +20,16 @@ export const Comment = ({content}:CommentsProps) =>{
                     <header>
                         <div className={styles.authorAndTime}>
                             <strong>Arthur Teixeira</strong>
-                            <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">Cerca de 1h</time>
+                            <time 
+                            title="11 de Maio às 08:13h"
+                            dateTime="2022-05-11 08:13:30">Cerca de 1h</time>
                         </div>
-
-                        <button title="Deletar comentário">
+                        <button 
+                         onClick={() => deleteComments(content)}
+                         title="Deletar comentário">
                             <Trash size={20} />
                         </button>
                     </header>
-
                     <p>{content}</p>
                 </div>
 

@@ -44,6 +44,13 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
         setNewComments("")
     }
 
+    function deleteComments(commentDelete:string){
+      const commentsFilter = comments.filter((commentsValue)=>{
+            return commentsValue != commentDelete;
+        })
+        setComments(commentsFilter);
+    }
+
     return (
         <article className={styles.post}>
             <header>
@@ -64,12 +71,14 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
             <div className={styles.content}>
                {content.map((contentValue)=>{
-                return (
-                    <>
-                    {contentValue.type === "paragraph" && <p>{contentValue.content}</p>}
-                    {contentValue.type === "link" && <p><a href={contentValue.content}>{contentValue.content}</a></p>}
-                    </>
-                )
+                if(contentValue.type === "paragraph"){
+                    return <p 
+                    key={contentValue.content}>{contentValue.content}</p>
+                }else{
+                    return <p 
+                    key={contentValue.content}>
+                    <a href={contentValue.content}>{contentValue.content}</a></p>
+                }
                })}
                 <p>
                     <a href="">#rocketseat</a>{' '}
@@ -91,7 +100,10 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
 
             <div className={styles.commentList}>
                 {comments.map((commentsValue)=>{
-                    return <Comment content={commentsValue} />
+                    return <Comment 
+                    deleteComments={deleteComments}
+                    key={commentsValue}
+                    content={commentsValue} />
                 })}
             </div>
         </article>
