@@ -38,6 +38,11 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
         addSuffix: true
     })
 
+    function setOnChangeComments(event:any){
+        event.target.setCustomValidity('')
+        setNewComments(event.target.value)
+    }
+
     function handleCreateNewComment(event:FormEvent){
         event.preventDefault()
         setComments([...comments, newComments])
@@ -50,6 +55,12 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
         })
         setComments(commentsFilter);
     }
+
+    function handleNewCommentInvalid(event:any){
+        event.target.setCustomValidity("Esse campo é obrigatorio")
+    }
+
+    const newCommentIsValid = newComments.length === 0;
 
     return (
         <article className={styles.post}>
@@ -93,9 +104,11 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
                 <textarea
                     placeholder="Deixe um comentário!"
                     value={newComments}
-                    onChange={(event) => setNewComments(event.target.value)}
+                    onChange={(event) => setOnChangeComments(event)}
+                    onInvalid={(event) => handleNewCommentInvalid(event)}
+                    required
                 />
-                <button type="submit">Publicar</button>
+                <button disabled={newCommentIsValid} type="submit">Publicar</button>
             </form>
 
             <div className={styles.commentList}>

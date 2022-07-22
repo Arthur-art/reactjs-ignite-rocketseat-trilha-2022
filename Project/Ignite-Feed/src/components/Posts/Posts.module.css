@@ -103,3 +103,8 @@
 .commentForm button:hover{
     background: var(--green-300);
 }
+
+.commentForm button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
