@@ -1,10 +1,13 @@
+import { Button } from "./components/Button/Button"
 
 
 function App() {
 
   return (
-    <div>
-    </div>
+    <>
+    <Button variant="danger"/>
+    <Button variant="secondary"/>
+    </>
   )
 }
 
