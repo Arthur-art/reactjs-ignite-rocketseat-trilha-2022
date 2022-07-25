@@ -1,6 +1,6 @@
 import {format, formatDistanceToNow} from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { Avatar } from "../Avatar/Avatar";
 import { Comment } from "../Comment/Comment";
 import styles from "./Posts.module.css"
@@ -38,12 +38,12 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
         addSuffix: true
     })
 
-    function setOnChangeComments(event:any){
+    function setOnChangeComments(event: ChangeEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity('')
         setNewComments(event.target.value)
     }
 
-    function handleCreateNewComment(event:FormEvent){
+    function handleCreateNewComment(event: FormEvent){
         event.preventDefault()
         setComments([...comments, newComments])
         setNewComments("")
@@ -56,7 +56,7 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
         setComments(commentsFilter);
     }
 
-    function handleNewCommentInvalid(event:any){
+    function handleNewCommentInvalid(event: ChangeEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity("Esse campo é obrigatorio")
     }
 
@@ -104,8 +104,8 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
                 <textarea
                     placeholder="Deixe um comentário!"
                     value={newComments}
-                    onChange={(event) => setOnChangeComments(event)}
-                    onInvalid={(event) => handleNewCommentInvalid(event)}
+                    onChange={setOnChangeComments}
+                    onInvalid={handleNewCommentInvalid}
                     required
                 />
                 <button disabled={newCommentIsValid} type="submit">Publicar</button>
