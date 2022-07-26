@@ -22,8 +22,6 @@ function App() {
     <ThemeProvider theme={state}>
     <Button variant="danger"/>
     <Button variant="secondary"/>
-    {state === defaultTheme && <button onClick={handleTheme}>dark</button>}
-    {state === darkTheme && <button onClick={handleTheme}>light</button>}
     <GlobalStyle />
     </ThemeProvider>
   )
