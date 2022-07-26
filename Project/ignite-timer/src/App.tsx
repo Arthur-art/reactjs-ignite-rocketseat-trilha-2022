@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ThemeProvider } from "styled-components"
 import { Button } from "./components/Button/Button"
+import { GlobalStyle } from "./styles/global"
 import { darkTheme, defaultTheme } from "./styles/themes/default"
 
 
@@ -23,6 +24,7 @@ function App() {
     <Button variant="secondary"/>
     {state === defaultTheme && <button onClick={handleTheme}>dark</button>}
     {state === darkTheme && <button onClick={handleTheme}>light</button>}
+    <GlobalStyle />
     </ThemeProvider>
   )
 }
