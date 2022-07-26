@@ -88,7 +88,7 @@ export const Posts = ({author, publishedAt, content}:PostProps) =>{
                 }else{
                     return <p 
                     key={contentValue.content}>
-                    <a href={contentValue.content}>{contentValue.content}</a></p>
+                    <a href="#">{contentValue.content}</a></p>
                 }
                })}
                 <p>
