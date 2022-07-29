@@ -12,3 +12,6 @@
 - npm i @rocketseat/eslint-config -D
 - Procurar e corrgir os erros do projeto como um todo
   - npx eslint src --ext .ts,.tsx --fix
+
+### Trabalhando com react-router-dom
+- https://github.com/remix-run/react-router
