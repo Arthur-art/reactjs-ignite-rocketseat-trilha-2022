@@ -15,3 +15,8 @@
 
 ### Trabalhando com react-router-dom
 - https://github.com/remix-run/react-router
+
+### Trabalhando com inputs Uncontrolled no react
+- https://reactjs.org/docs/uncontrolled-components.html
+- Lib:
+  - https://react-hook-form.com/
