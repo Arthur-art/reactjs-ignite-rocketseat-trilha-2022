@@ -20,3 +20,10 @@
 - https://reactjs.org/docs/uncontrolled-components.html
 - Lib:
   - https://react-hook-form.com/
+
+### Trabalhando com lib zod na validação de inputs
+- https://github.com/colinhacks/zod
+  - npm i zod
+
+- Integrando a lib react-hook-form com lib de validação
+  - npm i @hookform/resolvers
