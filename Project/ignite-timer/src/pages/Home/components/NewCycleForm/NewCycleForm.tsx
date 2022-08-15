@@ -4,7 +4,7 @@ import {
   TaskImput,
 } from './NewCycleForm.styles'
 import { useContext } from 'react'
-import { CyclesContext } from '../../Home'
+import { CyclesContext } from '../../../../contexts/CyclesContext'
 import { useFormContext } from 'react-hook-form'
 
 export const NewCycleForm = () => {
