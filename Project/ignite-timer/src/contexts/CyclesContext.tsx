@@ -21,8 +21,8 @@ interface CyclesContextType {
   markCycleAsFinished: () => void
   amountSecondsPassed: number
   setSecondsPassed: (seconds: number) => void
-  handleCreateNewCycle: (data: CreateCycleData) => void
-  handleInterruptCycle: () => void
+  createNewCycle: (data: CreateCycleData) => void
+  interruptCycle: () => void
 }
 
 interface CyclesContextProps {
@@ -54,7 +54,7 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
     )
   }
 
-  function handleInterruptCycle() {
+  function interruptCycle() {
     setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
@@ -68,7 +68,7 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
     setActiveCycleId(null)
   }
 
-  function handleCreateNewCycle(data: CreateCycleData) {
+  function createNewCycle(data: CreateCycleData) {
     const id = String(new Date().getTime())
     const newCycle: Cycle = {
       id,
@@ -79,7 +79,6 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-    // reset()
   }
 
   return (
@@ -91,8 +90,8 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
         markCycleAsFinished,
         amountSecondsPassed,
         setSecondsPassed,
-        handleCreateNewCycle,
-        handleInterruptCycle,
+        createNewCycle,
+        interruptCycle,
       }}
     >
       {children}
