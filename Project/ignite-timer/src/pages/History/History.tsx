@@ -18,38 +18,26 @@ export const History = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Estudar React</td>
-              <td>30 minutos</td>
-              <td>Há 3 dias</td>
-              <td>
-                <Status statusColor="green">Concluído</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Estudar Nest</td>
-              <td>30 minutos</td>
-              <td>Há 3 dias</td>
-              <td>
-                <Status statusColor="red">Interrompido</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Estudar React Native</td>
-              <td>30 minutos</td>
-              <td>Há 3 dias</td>
-              <td>
-                <Status statusColor="yellow">Em andamento</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Estudar Vue</td>
-              <td>30 minutos</td>
-              <td>Há 3 dias</td>
-              <td>
-                <Status statusColor="green">Concluído</Status>
-              </td>
-            </tr>
+            {cycles.map((cycle) => {
+              return (
+                <tr key={cycle.id}>
+                  <td>{cycle.task}</td>
+                  <td>{cycle.minutesAmount}</td>
+                  <td>{cycle.startDate?.toString()}</td>
+                  <td>
+                    {cycle.finishedDate && (
+                      <Status statusColor="green">Concluído</Status>
+                    )}
+                    {cycle.interruptedDate && (
+                      <Status statusColor="red">Interrompido</Status>
+                    )}
+                    {!cycle.finishedDate && !cycle.interruptedDate && (
+                      <Status statusColor="yellow">Em andamento</Status>
+                    )}
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </HistoryList>
