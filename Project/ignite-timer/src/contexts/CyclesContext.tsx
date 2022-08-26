@@ -60,7 +60,7 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
   }
 
   function interruptCycle() {
-    dispatch(interruptedCurrentCycle(activeCycleId))
+    dispatch(interruptedCurrentCycle())
     /* setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
@@ -73,7 +73,7 @@ export const CyclesContextProvider = ({ children }: CyclesContextProps) => {
   }
 
   function markCycleAsFinished() {
-    dispatch(markCurrentCycleAsFinished(activeCycleId))
+    dispatch(markCurrentCycleAsFinished())
     /* setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
