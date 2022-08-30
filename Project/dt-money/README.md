@@ -15,3 +15,6 @@
 - https://styled-components.com/
 - Tipagem:
   - npm i @types/styled-components -D
+
+### Trabalhando com lib phosphoricons para lidar com icons
+- https://phosphoricons.com/
