@@ -24,3 +24,15 @@
 
 ### Trabalhando com JSON server para simular um API
 - https://github.com/typicode/json-server
+
+### Trabalhando com inputs Uncontrolled no react e lib react-hook-form
+- https://reactjs.org/docs/uncontrolled-components.html
+- Lib:
+  - https://react-hook-form.com/
+
+### Trabalhando com lib zod na validação de inputs
+- https://github.com/colinhacks/zod
+  - npm i zod
+
+- Integrando a lib react-hook-form com lib de validação
+  - npm i @hookform/resolvers
