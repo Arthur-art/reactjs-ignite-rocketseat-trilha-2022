@@ -3,6 +3,7 @@ import { Header } from '../../components/Header/Header'
 import { SearchForm } from '../../components/SearchForm/SearchForm'
 import { Summary } from '../../components/Summary/Summary'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 import {
   PriceHighlight,
   TransactionsContainer,
@@ -27,11 +28,11 @@ export const Transactions = () => {
                   <td width="50%">{value.description}</td>
                   <td>
                     <PriceHighlight variant={value.type}>
-                      {value.price}
+                      {priceFormatter.format(value.price)}
                     </PriceHighlight>
                   </td>
                   <td>{value.category}</td>
-                  <td>{value.createdAt}</td>
+                  <td>{dateFormatter.format(new Date(value.createdAt))}</td>
                 </tr>
               )
             })}
