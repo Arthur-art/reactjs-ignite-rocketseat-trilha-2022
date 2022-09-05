@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Header } from '../../components/Header/Header'
 import { SearchForm } from '../../components/SearchForm/SearchForm'
 import { Summary } from '../../components/Summary/Summary'
@@ -7,7 +8,28 @@ import {
   TransactionsTable,
 } from './styles'
 
+type TransactionsProps = {
+  id: number
+  description: string
+  type: string
+  category: string
+  price: number
+  createdAt: string
+}
+
 export const Transactions = () => {
+  const [transactions, setTransactions] = useState<TransactionsProps[]>([])
+
+  async function loadTransaction() {
+    const response = await fetch('http://localhost:3000/transactions')
+    const data = await response.json()
+    setTransactions(data)
+  }
+
+  useEffect(() => {
+    loadTransaction()
+  }, [])
+
   return (
     <div>
       <Header />
@@ -17,30 +39,20 @@ export const Transactions = () => {
         <SearchForm />
         <TransactionsTable>
           <tbody>
-            <tr>
-              <td width="50%">Desenvolvimento de site</td>
-              <td>
-                <PriceHighlight variant="income">R$ 12000,00</PriceHighlight>
-              </td>
-              <td>Venda</td>
-              <td>02/09/2022</td>
-            </tr>
-            <tr>
-              <td width="50%">Ifood</td>
-              <td>
-                <PriceHighlight variant="outcome"> - R$ 45,00</PriceHighlight>
-              </td>
-              <td>Alimentação</td>
-              <td>12/09/2022</td>
-            </tr>
-            <tr>
-              <td width="50%">Emprestimo</td>
-              <td>
-                <PriceHighlight variant="outcome"> - R$ 650,00</PriceHighlight>
-              </td>
-              <td>Finanças</td>
-              <td>13/09/2022</td>
-            </tr>
+            {transactions.map((value) => {
+              return (
+                <tr key={value.id}>
+                  <td width="50%">{value.description}</td>
+                  <td>
+                    <PriceHighlight variant="income">
+                      {value.price}
+                    </PriceHighlight>
+                  </td>
+                  <td>{value.category}</td>
+                  <td>{value.createdAt}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
