@@ -3,7 +3,7 @@ import { createContext, ReactNode, useEffect, useState } from 'react'
 type Transaction = {
   id: number
   description: string
-  type: string
+  type: 'income' | 'outcome'
   category: string
   price: number
   createdAt: string
