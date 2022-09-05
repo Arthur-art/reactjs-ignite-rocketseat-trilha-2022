@@ -21,3 +21,6 @@
 
 ### Trabalhando com lib Radix para lidar com components primitivos com mais acessibilidade
 - https://www.radix-ui.com/
+
+### Trabalhando com JSON server para simular um API
+- https://github.com/typicode/json-server
