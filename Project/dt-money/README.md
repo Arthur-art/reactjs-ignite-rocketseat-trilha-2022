@@ -42,3 +42,20 @@
 
 ### Trabalhando com useCallback a fim de otimizar componentes filhos
 - https://pt-br.reactjs.org/docs/hooks-reference.html#usecallback
+
+### Trabalhando com useMemo
+
+- https://pt-br.reactjs.org/docs/hooks-reference.html#usememo
+
+- Por que que um combonente renderiza?
+  - Hooks changed (mudou estado, contexto, reducer);
+  - Props changed (mudou propriedades);
+  - Parent rerendered (componente pai renderizou);
+- Qual o fluxo de renderização?
+  1. O React recria o HTML da interface daquele componente
+  2. Compara a versão do HTML recriada com a versão anterior
+  3. SE mudou alguma coisa, ele reescreve o HTML na tela
+- Memo:
+  1. Hooks changed, Props changed (deep comparison)
+  2. Comparar a versão anterior dos hooks e props
+  3. SE mudou algo, ele vai permitir a nova renderização
