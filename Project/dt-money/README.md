@@ -43,7 +43,7 @@
 ### Trabalhando com useCallback a fim de otimizar componentes filhos
 - https://pt-br.reactjs.org/docs/hooks-reference.html#usecallback
 
-### Trabalhando com useMemo
+### Trabalhando com memo
 
 - https://pt-br.reactjs.org/docs/hooks-reference.html#usememo
 

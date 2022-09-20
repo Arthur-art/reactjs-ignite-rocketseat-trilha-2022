@@ -34,7 +34,7 @@ export const TransactionsProvider = ({
 }: TransactionsProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  async function fetchTransactions(query?: string) {
+  const fetchTransactions = useCallback(async (query?: string) => {
     const response = api.get('/transactions', {
       params: {
         q: query,
@@ -46,7 +46,7 @@ export const TransactionsProvider = ({
     const { data } = await response
 
     setTransactions(data)
-  }
+  }, [])
 
   const createTransactions = useCallback(
     async (query: NewTransactionForminputs) => {
@@ -67,7 +67,7 @@ export const TransactionsProvider = ({
 
   useEffect(() => {
     fetchTransactions()
-  }, [])
+  }, [fetchTransactions])
 
   return (
     <TransactionsContext.Provider
