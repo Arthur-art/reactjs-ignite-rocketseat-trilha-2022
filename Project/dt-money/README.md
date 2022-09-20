@@ -36,3 +36,6 @@
 
 - Integrando a lib react-hook-form com lib de validação
   - npm i @hookform/resolvers
+
+### Trabalhando com Axios na requisicao de dados
+- https://axios-http.com/ptbr/docs/intro
