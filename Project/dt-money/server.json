@@ -1,28 +1,52 @@
 {
-    "transactions": [
-      {
-        "id": 1,
-        "description": "Desenvolvimento de site",
-        "type": "income",
-        "category": "Venda",
-        "price": 14000,
-        "createdAt": "2022-07-29T19:36:44.505Z"
-      },
-      {
-        "id": 2,
-        "description": "Hambúrguer",
-        "type": "outcome",
-        "category": "Alimentação",
-        "price": 50,
-        "createdAt": "2022-07-29T19:30:44.505Z"
-      },
-      {
-        "id": 3,
-        "description": "Notebook",
-        "type": "outcome",
-        "category": "Alimentação",
-        "price": 5000,
-        "createdAt": "2022-07-29T19:30:44.505Z"
-      }
-    ]
-  }
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2022-07-29T19:36:44.505Z"
+    },
+    {
+      "id": 2,
+      "description": "Hambúrguer",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2022-07-29T19:30:44.505Z"
+    },
+    {
+      "id": 3,
+      "description": "Notebook",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 5000,
+      "createdAt": "2022-07-29T19:30:44.505Z"
+    },
+    {
+      "category": "Venda",
+      "description": "Desenvolvimento de software.",
+      "price": 16000,
+      "type": "income",
+      "createdAt": "2022-09-20T01:56:23.761Z",
+      "id": 4
+    },
+    {
+      "category": "Compra",
+      "description": "Iphone 12.",
+      "price": 4200,
+      "type": "outcome",
+      "createdAt": "2022-09-20T02:08:21.852Z",
+      "id": 5
+    },
+    {
+      "category": "Notebook",
+      "description": "Nitro 5.",
+      "price": 5500,
+      "type": "outcome",
+      "createdAt": "2022-09-20T02:11:30.962Z",
+      "id": 6
+    }
+  ]
+}
