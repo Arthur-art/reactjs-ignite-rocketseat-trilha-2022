@@ -39,3 +39,6 @@
 
 ### Trabalhando com Axios na requisicao de dados
 - https://axios-http.com/ptbr/docs/intro
+
+### Trabalhando com useCallback a fim de otimizar componentes filhos
+- https://pt-br.reactjs.org/docs/hooks-reference.html#usecallback

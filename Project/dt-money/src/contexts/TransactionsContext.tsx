@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { NewTransactionForminputs } from '../components/NewTransactionModal/NewTransactionModal'
 import { api } from '../libs/axios'
 
@@ -42,19 +48,22 @@ export const TransactionsProvider = ({
     setTransactions(data)
   }
 
-  async function createTransactions(query: NewTransactionForminputs) {
-    const { category, description, price, type } = query
+  const createTransactions = useCallback(
+    async (query: NewTransactionForminputs) => {
+      const { category, description, price, type } = query
 
-    const response = await api.post('/transactions', {
-      category,
-      description,
-      price,
-      type,
-      createdAt: new Date(),
-    })
+      const response = await api.post('/transactions', {
+        category,
+        description,
+        price,
+        type,
+        createdAt: new Date(),
+      })
 
-    setTransactions((state) => [...state, response.data])
-  }
+      setTransactions((state) => [...state, response.data])
+    },
+    [],
+  )
 
   useEffect(() => {
     fetchTransactions()
