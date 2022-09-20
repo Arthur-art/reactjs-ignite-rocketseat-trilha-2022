@@ -47,6 +47,14 @@
       "type": "outcome",
       "createdAt": "2022-09-20T02:11:30.962Z",
       "id": 6
+    },
+    {
+      "category": "Serviço",
+      "description": "Salario",
+      "price": 20000,
+      "type": "income",
+      "createdAt": "2022-09-20T23:07:00.065Z",
+      "id": 7
     }
   ]
 }

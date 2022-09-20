@@ -59,3 +59,4 @@
   1. Hooks changed, Props changed (deep comparison)
   2. Comparar a versão anterior dos hooks e props
   3. SE mudou algo, ele vai permitir a nova renderização
+
