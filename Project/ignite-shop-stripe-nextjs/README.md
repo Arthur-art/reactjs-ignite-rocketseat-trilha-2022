@@ -8,3 +8,6 @@
 
 ### Instalando TypeScript
 - npm i typescript @types/react @types/node -D
+
+### Trabalhando com stitches na estilização
+- https://stitches.dev/
