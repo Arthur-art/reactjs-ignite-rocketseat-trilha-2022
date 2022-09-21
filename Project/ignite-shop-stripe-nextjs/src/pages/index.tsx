@@ -15,10 +15,5 @@ const Button = styled('button', {
 })
 
 export default function Home() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <Button>Click</Button>
-    </div>
-  )
+  return <div></div>
 }
