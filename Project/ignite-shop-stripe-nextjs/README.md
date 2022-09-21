@@ -11,3 +11,5 @@
 
 ### Trabalhando com stitches na estilização
 - https://stitches.dev/
+- Executando css in js mesmo com o javascript desabilitado no browser
+  - https://stitches.dev/docs/server-side-rendering
