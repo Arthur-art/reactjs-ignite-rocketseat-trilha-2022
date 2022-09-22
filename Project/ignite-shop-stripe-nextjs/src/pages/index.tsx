@@ -15,5 +15,9 @@ const Button = styled('button', {
 })
 
 export default function Home() {
-  return <div></div>
+  return (
+    <div>
+      <Button>Click</Button>
+    </div>
+  )
 }
