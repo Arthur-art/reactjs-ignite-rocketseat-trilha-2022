@@ -19,3 +19,13 @@
 
 ### Trabalhando com lib keen-slider.io para desenvolver o component Carousel
 - https://keen-slider.io
+
+### Trabalhando com Stripe para lidar com compras online
+- https://stripe.com/docs
+
+### Configurando Stripe
+- Criar uma conta "Ignite Shop"
+- Criar os produtos na aba de "Produtos"
+- Entrar no modo desenvolvedores
+- resgatar as chaves de api publica e privadas 
+- adicionar as chaves em um arquivo .env.local no projeto
