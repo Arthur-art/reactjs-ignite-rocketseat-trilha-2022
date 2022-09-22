@@ -1,4 +1,4 @@
-## ReactJS-Ignite-Trilha-Atualizada
+## ReactJS-Ignite-Trilha-2022
 
 - O Ignite é um programa de aprendizado intensivo da Rocketseat com duração de 6 semanas, para quem já domina os fundamentos da programação, para se especializar em uma Tecnologia.
 
