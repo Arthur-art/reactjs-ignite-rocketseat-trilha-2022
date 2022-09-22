@@ -16,3 +16,6 @@
 
 ### Trabalhando com Images no NextJS
 - https://nextjs.org/docs/api-reference/next/future/image
+
+### Trabalhando com lib keen-slider.io para desenvolver o component Carousel
+- https://keen-slider.io
