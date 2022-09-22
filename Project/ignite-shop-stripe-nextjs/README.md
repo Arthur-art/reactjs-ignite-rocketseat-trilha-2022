@@ -29,3 +29,6 @@
 - Entrar no modo desenvolvedores
 - resgatar as chaves de api publica e privadas 
 - adicionar as chaves em um arquivo .env.local no projeto
+
+### Trabalhando com Data Fetching no Nextjs
+- https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props

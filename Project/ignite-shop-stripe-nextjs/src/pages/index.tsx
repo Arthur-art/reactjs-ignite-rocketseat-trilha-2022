@@ -7,7 +7,7 @@ import { HomeContainer, Product } from '../styles/pages/home'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
-export default function Home() {
+export default function Home(props) {
   const [sliderRef] = useKeenSlider({
     slides: {
       perView: 3,
@@ -16,6 +16,7 @@ export default function Home() {
   })
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
+      {JSON.stringify(props.list)}
       <Product className="keen-slider__slide">
         <Image width={520} height={480} src={shirt1} alt="shirt" />
         <footer>
@@ -46,4 +47,14 @@ export default function Home() {
       </Product>
     </HomeContainer>
   )
+}
+
+export async function getServerSideProps() {
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
+  return {
+    props: {
+      list: [1, 2, 3, 4, 5],
+    },
+  }
 }
