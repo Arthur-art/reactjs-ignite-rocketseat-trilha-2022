@@ -6,6 +6,8 @@ import shirt4 from '../assets/4.png'
 import { HomeContainer, Product } from '../styles/pages/home'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import { stripe } from '../lib/stripe'
+import { GetServerSideProps } from 'next'
 
 export default function Home(props) {
   const [sliderRef] = useKeenSlider({
@@ -49,8 +51,10 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await stripe.products.list()
+
+  console.log('ResponseStripe', response.data)
 
   return {
     props: {

@@ -30,5 +30,8 @@
 - resgatar as chaves de api publica e privadas 
 - adicionar as chaves em um arquivo .env.local no projeto
 
+### Instalando stripe no projeto
+- https://github.com/stripe/stripe-node
+
 ### Trabalhando com Data Fetching no Nextjs
 - https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
