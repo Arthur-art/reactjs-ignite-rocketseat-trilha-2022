@@ -38,3 +38,6 @@
 
 ### Trabalhando com getStaticProps
 - https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+
+### Trabalhando com Link no next js
+- https://nextjs.org/docs/api-reference/next/link
