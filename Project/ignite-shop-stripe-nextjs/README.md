@@ -35,3 +35,6 @@
 
 ### Trabalhando com Data Fetching no Nextjs
 - https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
+
+### Trabalhando com getStaticProps
+- https://nextjs.org/docs/basic-features/data-fetching/get-static-props
