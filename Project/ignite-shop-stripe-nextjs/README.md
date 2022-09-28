@@ -50,3 +50,6 @@
 
 ### Trabalhando com api routes no NextJS
 - https://nextjs.org/docs/api-routes/introduction
+
+### Trabalhando com checkout session no stripe "Uma forma do usuario terminar uma compra dentro do stripe"
+- https://stripe.com/docs/api/checkout/sessions
