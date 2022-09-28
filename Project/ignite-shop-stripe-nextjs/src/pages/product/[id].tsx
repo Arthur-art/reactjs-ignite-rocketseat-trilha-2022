@@ -23,7 +23,11 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const { query } = useRouter()
+  const { query, isFallback } = useRouter()
+
+  if (isFallback) {
+    return <p>Loading...</p>
+  }
 
   return (
     <ProductContainer>
@@ -31,13 +35,9 @@ export default function Product({ product }: ProductProps) {
         <Image width={520} height={480} src={product.imageUrl} alt="shirt" />
       </ImageContainer>
       <ProductDetails>
-        <h1>Camiseta X</h1>
-        <span>R$ 79,90</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-          obcaecati provident soluta natus quas optio iste illo deserunt,
-          voluptas nobis ab eos ex in. Excepturi quo dicta qui perferendis nemo.
-        </p>
+        <h1>{product.name}</h1>
+        <span>{product.price}</span>
+        <p>{product.description}</p>
 
         <button>Comprar agora</button>
       </ProductDetails>
@@ -48,7 +48,7 @@ export default function Product({ product }: ProductProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [{ params: { id: 'prod_MTspllE3GZ7Rot' } }],
-    fallback: false,
+    fallback: true,
   }
 }
 

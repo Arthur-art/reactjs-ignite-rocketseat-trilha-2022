@@ -41,3 +41,6 @@
 
 ### Trabalhando com Link no next js
 - https://nextjs.org/docs/api-reference/next/link
+
+### Trabalhando com fallback no SSG
+- https://nextjs.org/docs/api-reference/data-fetching/get-static-paths
