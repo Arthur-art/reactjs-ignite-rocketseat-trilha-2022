@@ -47,3 +47,6 @@
 
 ### Lidando com Prefetch no NextJS
 - https://nextjs.org/docs/api-reference/next/link
+
+### Trabalhando com api routes no NextJS
+- https://nextjs.org/docs/api-routes/introduction
