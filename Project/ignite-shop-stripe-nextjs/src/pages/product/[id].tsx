@@ -23,7 +23,7 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const { query, isFallback } = useRouter()
+  const { isFallback } = useRouter()
 
   if (isFallback) {
     return <p>Loading...</p>

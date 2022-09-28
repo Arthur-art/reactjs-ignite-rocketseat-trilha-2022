@@ -44,3 +44,6 @@
 
 ### Trabalhando com fallback no SSG
 - https://nextjs.org/docs/api-reference/data-fetching/get-static-paths
+
+### Lidando com Prefetch no NextJS
+- https://nextjs.org/docs/api-reference/next/link
